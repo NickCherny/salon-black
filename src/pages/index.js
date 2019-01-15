@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import { Navigate } from '../components/Navigate';
-import Layout from '../components/layout'
+import {Layout} from '../components/Layout'
 import Image from '../components/image'
-import SEO from '../components/seo'
+import {SEO} from '../components/SEO'
 
 const IndexPage = () => (
   <Layout>
