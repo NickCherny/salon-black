@@ -1,12 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { Layout } from '../components/Layout'
-import {SEO} from '../components/SEO'
+import { Layout } from '../components/Layout';
+import { SEO } from '../components/SEO';
 
 const CatalogPage = ({ data }) => (
   <Layout>
-    <SEO title="Catalog" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Catalog" keywords={['gatsby', 'application', 'react']} />
     <h1>Catalog</h1>
     <div>
       {JSON.stringify(data)}

@@ -1,0 +1,28 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "commonjs": true,
+    "mocha": true
+  },
+  "globals": {
+    "google": true
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "rules": {
+    "no-var-requires": false,
+    "max-line-length": 0,
+    "no-console": 1,
+    "no-floating-promises": true,
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
+    "import/prefer-default-export": 0,
+    "react/jsx-filename-extension": "js"
+  }
+}
