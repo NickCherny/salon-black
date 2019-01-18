@@ -12,6 +12,7 @@
     "airbnb"
   ],
   "rules": {
+    "comma-dangle": "off",
     "no-var-requires": false,
     "max-line-length": 0,
     "no-console": 1,

@@ -1,45 +1,34 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/SEO';
 
-const CatalogPage = ({ data }) => (
+const CatalogPage = () => (
   <Layout>
     <SEO title="Catalog" keywords={['gatsby', 'application', 'react']} />
     <h1>Catalog</h1>
-    <div>
-      {JSON.stringify(data)}
-    </div>
+    <StaticQuery
+      query={graphql`
+        query {
+          allMarkdownRemark {
+            edges {
+              node {
+                frontmatter {
+                  title
+                  path
+                  date
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <div>{JSON.stringify(data)}</div>
+      )}
+    />
   </Layout>
 );
 
 export default CatalogPage;
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { title: { ne: "" } } }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
-        }
-      }
-    }
-  }
-`;
