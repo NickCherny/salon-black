@@ -24,9 +24,7 @@ const CatalogPage = () => (
           }
         }
       `}
-      render={data => (
-        <div>{JSON.stringify(data)}</div>
-      )}
+      render={data => <div>{JSON.stringify(data)}</div>}
     />
   </Layout>
 );
