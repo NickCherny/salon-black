@@ -34,8 +34,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "lint": "eslint --ext .js --cache --fix src",
-    "deploy": "gatsby build && gh-pages -d public -b master",
     "format": "prettier --write \"src/**/*.js\"",
+    "deploy": "npm run format && gatsby build && gh-pages -d public -b master",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
@@ -55,7 +55,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run deploy"
+      "pre-push": "npm run lint && npm run deploy"
     }
   }
 }
