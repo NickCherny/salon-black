@@ -82,15 +82,15 @@ function SEO({
 
 SEO.defaultProps = {
   lang: 'en',
-  meta: [],
   keywords: [],
+  meta: [],
   description: '',
 };
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
-  meta: PropTypes.array,
+  meta: PropTypes.arrayOf(PropTypes.string),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
 };
