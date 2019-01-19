@@ -10,6 +10,12 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-transformer-json',
+      options: {
+        typeName: 'json',
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',

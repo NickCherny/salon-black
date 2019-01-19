@@ -1,5 +1,8 @@
 import React from 'react';
 
-const Template = () => <div>Catalog</div>;
+const Template = (props) => {
+  console.log(props);
+  return <div>Catalog</div>;
+};
 
 export default Template;
