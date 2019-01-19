@@ -3,9 +3,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/SEO';
-import {
-  CatalogList
-} from '../components/CatalogList';
+import { CatalogList } from '../components/CatalogList';
 
 const CatalogPage = () => (
   <Layout>
@@ -15,11 +13,7 @@ const CatalogPage = () => (
       query={graphql`
         query {
           allMarkdownRemark(
-            filter: {
-              frontmatter: {
-                path: { regex: "/price/" }
-              }
-            }
+            filter: { frontmatter: { path: { regex: "/price/" } } }
           ) {
             edges {
               node {
@@ -32,7 +26,9 @@ const CatalogPage = () => (
           }
         }
       `}
-      render={({ allMarkdownRemark }) => <CatalogList data={{ ...allMarkdownRemark.edges }} />}
+      render={({ allMarkdownRemark }) => (
+        <CatalogList data={{ ...allMarkdownRemark.edges }} />
+      )}
     />
   </Layout>
 );

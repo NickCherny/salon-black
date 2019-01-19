@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import {
-  fontFamily,
-} from '../../constants/stylesheet';
+import { fontFamily } from '../../constants/stylesheet';
 
 const ContactGrid = styled.div`
   display: flex;
@@ -40,9 +38,7 @@ const ContactInfo = ({ html }) => (
   <main>
     <CaontactTitle>Контакты</CaontactTitle>
     <ContactGrid>
-      <ContactContent
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <ContactContent dangerouslySetInnerHTML={{ __html: html }} />
       <ContactMapContainer>
         <iframe
           title="contact"
@@ -56,7 +52,7 @@ const ContactInfo = ({ html }) => (
 );
 
 ContactInfo.propTypes = {
-  html: PropTypes.string.isRequired
+  html: PropTypes.string.isRequired,
 };
 
 export default ContactInfo;

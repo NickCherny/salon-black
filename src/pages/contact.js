@@ -1,19 +1,10 @@
 import React from 'react';
-import {
-  StaticQuery,
-  graphql,
-} from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import { ContactInfo } from '../components/ContactInfo';
 
 const request = graphql`
   query {
-    allMarkdownRemark(
-      filter: {
-        frontmatter: {
-          path: { eq: "/contact" }
-        }
-      }
-    ) {
+    allMarkdownRemark(filter: { frontmatter: { path: { eq: "/contact" } } }) {
       edges {
         node {
           html

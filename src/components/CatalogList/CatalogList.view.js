@@ -25,15 +25,10 @@ const CatalogListTitle = styled.h3`
 
 const CatalogList = ({ data }) => (
   <main>
-    {data.map(({
-      title,
-      html
-    }) => (
+    {data.map(({ title, html }) => (
       <CatalogContainer key={`catalog_item_${JSON.stringify(title)}`}>
         <CatalogListTitle>{title}</CatalogListTitle>
-        <CatalogListGrid
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <CatalogListGrid dangerouslySetInnerHTML={{ __html: html }} />
       </CatalogContainer>
     ))}
   </main>

@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 
 const ItemNavigate = ({ label, href }) => <Link to={href}>{label}</Link>;
 
-
 const Navigate = () => (
   <nav>
     <ItemNavigate href="/catalog" label="Котолог" />

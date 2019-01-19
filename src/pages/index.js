@@ -5,7 +5,7 @@ import { Layout } from '../components/Layout';
 import Image from '../components/image';
 import { SEO } from '../components/SEO';
 
-const IndexPage = (props) => {
+const IndexPage = props => {
   console.log(props);
   return (
     <Layout>
@@ -19,6 +19,6 @@ const IndexPage = (props) => {
       <Navigate />
     </Layout>
   );
-}
+};
 
 export default IndexPage;
