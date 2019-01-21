@@ -6,8 +6,7 @@
     "mocha": true
   },
   "globals": {
-    "google": true,
-    "require": true
+    "google": true
   },
   "extends": [
     "airbnb"
