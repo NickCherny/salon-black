@@ -6,11 +6,11 @@
 
 // You can delete this file if you're not using it
 
-exports.createPages = ({
+exports.createPages = async ({
   graphql, actions: { createPage }
 }) => {
   const TargetComponent = global.require('./src/templates/catalog.js');
-  return graphql`
+  const { data, error } = await graphql`
     query {
       allMarkdownRemark {
         edges {
@@ -24,21 +24,19 @@ exports.createPages = ({
         }
       }
     }
-  `.then((result) => {
-      if (result.error) {
-        throw result.error;
-      } else {
-        console.log(result);
-        result.data.allMarkdownRemark.edges.forEach((edge) => {
-          createPage({
-            path: edge.node.fileAbsolutePath,
-            component: TargetComponent,
-            context: {
-              ...edge,
-            }
-          });
-        });
-      }
-    })
-    .catch(console.error);
+  `;
+
+  if (error) {
+    console.error(error);
+  } else {
+    data.allMarkdownRemark.edges.forEach((edge) => {
+      createPage({
+        path: edge.node.fileAbsolutePath,
+        component: TargetComponent,
+        context: {
+          ...edge,
+        }
+      });
+    });
+  }
 };
