@@ -7,17 +7,21 @@ const ContactPage = () => (
   <main>
     <StaticQuery
       query={graphql`
-      query {
-        allMarkdownRemark(filter: { frontmatter: { path: { eq: "/contact" } } }) {
-          edges {
-            node {
-              html
+        query {
+          allMarkdownRemark(
+            filter: { frontmatter: { path: { eq: "/contact" } } }
+          ) {
+            edges {
+              node {
+                html
+              }
             }
           }
         }
-      }
-    `}
-      render={data => <ContactInfo {...get(data, 'allMarkdownRemark.edges[0].node', {})} />}
+      `}
+      render={data => (
+        <ContactInfo {...get(data, 'allMarkdownRemark.edges[0].node', {})} />
+      )}
     />
   </main>
 );
