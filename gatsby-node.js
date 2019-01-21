@@ -9,7 +9,7 @@
 exports.createPages = async ({
   graphql, actions: { createPage }
 }) => {
-  const TargetComponent = global.require('./src/templates/catalog.js');
+  const TargetComponent = require('./src/templates/catalog.js');
   const { data, error } = await graphql`
     query {
       allMarkdownRemark {
